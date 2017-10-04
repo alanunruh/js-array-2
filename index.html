@@ -84,8 +84,15 @@
     console.log(index);
 
     // delete the comment with the ID of 823423
-    comments.splice(index, 1);
 
+    // Original deletion syntax
+    //comments.splice(index, 1);
+
+    // Refactored deletion syntax (Redux)
+    const newComments = [
+      ...comments.slice(0, index),
+      ...comments.slice(index + 1)
+    ];
 
   </script>
 </body>
